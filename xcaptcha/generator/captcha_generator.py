@@ -9,11 +9,7 @@ from xcaptcha.types import CAPTCHA
 
 class CAPTCHAGenerator():
     def __init__(self, charset: str, min_size: Tuple[int, int], max_size: Tuple[int, int],
-                 min_length: int, max_length: int, fonts: List[str],
-                 transformations_under: List[Callable[[np.ndarray], np.ndarray]],
-                 transformations_char: List[Callable[[np.ndarray, np.ndarray], Tuple[np.ndarray, np.ndarray]]],
-                 transformations_text: List[Callable[[np.ndarray, np.ndarray], Tuple[np.ndarray, np.ndarray]]],
-                 transformations_over: List[Callable[[np.ndarray], np.ndarray]]):
+                 min_length: int, max_length: int, fonts: List[str]):
         self.charset = charset
         self.charset_length = len(self.charset)
         self.min_size = min_size
@@ -21,10 +17,6 @@ class CAPTCHAGenerator():
         self.min_length = min_length
         self.max_length = max_length
         self.fonts = fonts
-        self.transformations_under = transformations_under
-        self.transformations_char = transformations_char
-        self.transformations_text = transformations_text
-        self.transformations_over = transformations_over
 
     def __iter__(self):
         return self

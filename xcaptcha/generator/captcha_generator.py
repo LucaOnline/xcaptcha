@@ -25,7 +25,7 @@ class CAPTCHAGenerator():
         return self.generate()
 
     def generate(self) -> CAPTCHA:
-        n_chars = randint(self.min_length, high=self.max_length)
+        n_chars = randint(self.min_length, high=self.max_length + 1)
         text = [self.charset[i]
                 for i in randint(0, high=self.charset_length, size=(n_chars,))]
         height = randint(self.min_size[0], high=self.max_size[0] + 1)

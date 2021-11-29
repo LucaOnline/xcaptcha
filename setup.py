@@ -8,7 +8,7 @@ with open("requirements.txt", "r") as f:
 
 setup(
     name="xcaptcha",
-    version="v1.0.0",
+    version="v1.0.1",
     author="Luca Chang",
     description="",
     long_description=long_description,
